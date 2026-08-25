@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-baobab-50: #f2faf4;
+  --color-baobab-100: #e0f4e5;
+  --color-baobab-200: #b9e6c4;
+  --color-baobab-300: #8bd4a0;
+  --color-baobab-400: #57bb78;
+  --color-baobab-500: #2f9d57;
+  --color-baobab-600: #1f7c42;
+  --color-baobab-700: #1a5f35;
+  --color-baobab-800: #17492c;
+  --color-baobab-900: #133c25;
+
+  --color-lagon-50: #eef7fb;
+  --color-lagon-100: #d9edf5;
+  --color-lagon-200: #b0dbec;
+  --color-lagon-300: #7ec3dd;
+  --color-lagon-400: #48a4c6;
+  --color-lagon-500: #2c86a9;
+  --color-lagon-600: #236c8a;
+  --color-lagon-700: #1f5771;
+  --color-lagon-900: #173e50;
+
+  --color-sable: #fbf9f3;
+
+  --animate-fade-up: fadeUp .7s ease-out both;
+}
+
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Le contenu de public/css/app.css vient ici --- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-slot { position: relative; overflow: hidden; }
+.photo-slot img { transition: transform .5s ease; }
+.photo-slot:hover img { transform: scale(1.06); }
+.photo-slot.img-missing img { display: none; }
+.photo-slot.img-missing::before {
+  content: attr(data-label);
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 1rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600; font-size: .8rem; letter-spacing: .02em;
+  color: rgba(255,255,255,.9);
+  background: linear-gradient(135deg, var(--slot-a, #2f9d57), var(--slot-b, #1a5f35));
+}
+
+.card-destination { transition: transform .35s ease, box-shadow .35s ease; }
+.card-destination:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -20px rgba(23,73,44,.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .card-destination, .photo-slot img { transition: none; }
+}
