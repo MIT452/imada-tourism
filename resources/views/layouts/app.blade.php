@@ -47,9 +47,9 @@
     <footer id="contact" class="bg-baobab-900 text-baobab-100 mt-24">
         <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-4 gap-10">
             <div class="md:col-span-2">
-                <img src="{{ asset('images/logo-imada.svg') }}" alt="iMada" class="h-8 w-8 rounded-full shrink-0">
-                    <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-baobab-500 text-white text-sm">iMada</span>
-                    
+                <div class="flex items-center gap-2 font-display font-800 text-lg text-white mb-3">
+                    <img src="{{ asset('images/logo-imada.svg') }}" alt="iMada" class="h-8 w-8 rounded-full shrink-0">
+                    iMada
                 </div>
                 <p class="text-sm text-baobab-200 max-w-sm">Agence locale spécialisée dans les circuits sur mesure à Madagascar : forêts tropicales, plages de l'Océan Indien et hauts plateaux.</p>
             </div>
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="border-t border-baobab-800 py-5 text-center text-xs text-baobab-300">
-            © {{ date('Y') }} Madagasikara Voyages — Tous droits réservés.
+            © {{ date('Y') }} iMada — Tous droits réservés.
         </div>
     </footer>
 
